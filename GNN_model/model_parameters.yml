@@ -1,0 +1,36 @@
+jobtype:  #Training results are saved in ./Training_Recording/{jobtype}, with folders named by date and time
+path: database   # to store processed data
+sdf_file:  #Path to the sdf file
+node_attr_file: null #Path to the json file storing additional node data
+edge_attr_file: null #For future use when adding additional edge information
+graph_attr_file:  #Path to the csv file storing descriptor data
+node_attr_list: [] #Node information to be imported from the json file
+edge_attr_list: []
+graph_attr_list: [] #Descriptors to be used
+target_list: [] #Position of the target property to be predicted
+node_attr_filter: []   # remove one hot
+edge_attr_filter: []   # no filter
+dim_linear: 32 
+dim_conv: 32 
+processing_steps: 3 
+mp_times: 3 
+mode: Sc_KG  # Sg/Cir/KC/KC_R/Sc_p/Sc_K/Sc_KG
+KC_path: 
+Sc_line: null
+Sc_out: []
+Distance: False
+num_samples: 36
+batch_size: 2
+lr: 0.01
+split_method: random # random/manual
+SPLIT_file: 
+seed: 1
+train_size: 0.6
+val_size: 0.2
+optimizer: adam
+scheduler: plateau # plateau/Exp
+scheduler_factor: 0.7
+scheduler_patience: 20
+scheduler_min_lr: 0.00001
+epoch_num: 200
+output_step: 1
