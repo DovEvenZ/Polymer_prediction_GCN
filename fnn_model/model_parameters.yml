@@ -1,0 +1,26 @@
+jobtype: DK_CC
+path: database
+data_file: /home2/zyw/TOPO/ForGNN/DK_CC.csv
+feature_list: ['D_pred','w','DK_211','DK_411'] 
+target_list: ['Dk']
+target_transform: null   # LN / LG / E^-x / null
+feature_filter_mode: null   # one_by_one / file / null
+batch_size: 6
+lr: 0.01
+split_method: random
+SPLIT_file: /home2/zyw/K_CrossVal/gnn_model/npy4CV/Den_polyene/Aug_31_2024_101935/split_1.npy
+restart_model: null
+seed: 29
+train_size: 0.6
+val_size: 0.2
+hidden_layer: [4,4]
+optimizer: adam
+scheduler: plateau
+scheduler_factor: 0.7
+scheduler_patience: 20
+scheduler_min_lr: 0.00001
+epoch_num: 5000
+output_step: 1
+model_save_step: 5
+criteria_list: ['MAE', 'ARD']
+plotting_objects: ['Loss', 'Train MAE', 'Train R2', 'Train ARD', 'Val MAE', 'Val R2', 'Val ARD', 'Test MAE', 'Test R2', 'Test ARD']
